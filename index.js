@@ -27,8 +27,12 @@ module.exports = class EmojiUtility extends Plugin {
       usage: '{c} [emote name]',
       executor: (args) => {
         const argument = args.join(' ').toLowerCase();
+
         if (argument.length === 0) {
-          return this.replyError('Please provide an emote name');
+          return {
+            send: false,
+            result: 'Could not find any emotes containing **' + argument + '**'
+          }
         }
 
         const emojis = Object.values(this.emojiStore.getGuilds()).flatMap(g => g.emojis);
@@ -41,15 +45,17 @@ module.exports = class EmojiUtility extends Plugin {
             result: emojisAsString
           };
         }
-
-        return this.replyError(`Could not find any emotes containing **${argument}**`);
+        return {
+          send: false,
+          result: 'Could not find any emotes containing **' + argument + '**'
+        }
       }
     });
 
   }
 
   pluginWillUnload () {
-    powercord.api.commands.unregisterCommand('');
+    powercord.api.commands.unregisterCommand('e');
   }
 
 };
