@@ -26,8 +26,13 @@ module.exports = class EmojiUtility extends Plugin {
       description: 'Send emote as link',
       usage: '{c} [emote name]',
       executor: (args) => {
-        const argument = args.join(' ').toLowerCase();
-
+        let argument = args[0];
+        let size = 32;
+        console.log(args);
+        if (args[0] == "-s") {
+          size = args[1];
+          argument = args[2];
+        }
         if (argument.length === 0) {
           return {
             send: false,
@@ -39,7 +44,7 @@ module.exports = class EmojiUtility extends Plugin {
         const foundEmojis = emojis.filter(emoji => emoji.name.toLowerCase().includes(argument));
         
         if (foundEmojis.length > 0) {
-          const emojisAsString = foundEmojis[0].url + '&size=32';
+          const emojisAsString = foundEmojis[0].url + '&size=' + size;
           return {
             send: true,
             result: emojisAsString
