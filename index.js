@@ -27,7 +27,7 @@ module.exports = class EmojiUtility extends Plugin {
       usage: '{c} [emote name]',
       executor: (args) => {
         let argument = args[0];
-        let size = 64;
+        let size = 32;
         
         if (args[0] == "-s") {
           size = args[1];
