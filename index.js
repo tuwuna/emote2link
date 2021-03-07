@@ -23,7 +23,7 @@ module.exports = class EmojiUtility extends Plugin {
 
     powercord.api.commands.registerCommand({
       command: 'e',
-      description: 'Send emote as link',
+      description: 'Send emote as link, usages: .e {emotename} or .e -s {size} {emotename} (size default to 32)',
       usage: '{c} [emote name]',
       executor: (args) => {
         let argument = args[0];
