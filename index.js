@@ -9,7 +9,6 @@ module.exports = class EmojiUtility extends Plugin {
     if (typeof filter === 'string') {
       filter = [ filter ];
     }
-
     this[functionName] = (await getModule(filter))[functionName];
   }
 
