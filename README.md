@@ -6,4 +6,4 @@ Linux: `$ cd $HOME/powercord/src/Powercord/plugins/ && git clone https://github.
 
 # Usage
 
-`.e {emotename} or .e -s {size} {emotename} (size default to 64)`
+`.e {emotename} or .e -s {size} {emotename} (size default to 32)`
