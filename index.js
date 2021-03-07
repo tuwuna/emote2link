@@ -49,7 +49,7 @@ module.exports = class EmojiUtility extends Plugin {
   }
 
   pluginWillUnload () {
-    powercord.api.commands.unregisterCommand('e');
+    powercord.api.commands.unregisterCommand('');
   }
 
 };
