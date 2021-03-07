@@ -28,11 +28,19 @@ module.exports = class EmojiUtility extends Plugin {
       executor: (args) => {
         let argument = args[0];
         let size = 32;
-        console.log(args);
+        
         if (args[0] == "-s") {
           size = args[1];
           argument = args[2];
         }
+
+        if ((1 << Math.log2(size)) != size) {
+          return {
+            send: false,
+            result: 'Size should be a power of 2'
+          }
+        }
+
         if (argument.length === 0) {
           return {
             send: false,
