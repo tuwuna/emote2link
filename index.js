@@ -48,7 +48,7 @@ module.exports = class EmojiUtility extends Plugin {
         }
 
         const emojis = Object.values(this.emojiStore.getGuilds()).flatMap(g => g.emojis);
-        const foundEmojis = emojis.filter(emoji => emoji.name.includes(argument));
+        const foundEmojis = emojis.filter(emoji => emoji.name.toLowerCase().includes(argument));
         
         if (foundEmojis.length > 0) {
           const emojisAsString = foundEmojis[0].url + '&size=' + size;
