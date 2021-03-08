@@ -2,9 +2,8 @@ Send emote as link.
 # Installation
 Powercord: https://powercord.dev/installation
 
-Linux: `$ cd $HOME/powercord/src/Powercord/plugins/ && git clone https://github.com/tuwuna/emote2link`
-
-Windows: Download zip and paste the unzip-ed folder in `User settings>Plugins>3DotsButton>Opens plugins folder`
+Manual: Download zip and paste the unzip-ed folder in `User settings>Plugins>3DotsButton>Opens plugins folder`
+Linux's command: `$ cd $HOME/powercord/src/Powercord/plugins/ && git clone https://github.com/tuwuna/emote2link`
 
 Don't forget to reload discord using Ctrl + R
 
