@@ -36,7 +36,7 @@ module.exports = class EmojiUtility extends Plugin {
         if ((1 << Math.log2(size)) != size) {
           return {
             send: false,
-            result: 'Size should be a power of 2'
+            result: 'Size should be equal to power of 2'
           }
         }
 
